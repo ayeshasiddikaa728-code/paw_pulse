@@ -10,6 +10,7 @@ class Pet {
   final String imagePath;
   final String category; // Dog, Cat, Bird, Other
   final bool isFavorite;
+  final String notes; // New field for Care Notes / Bio
 
   Pet({
     required this.id,
@@ -20,6 +21,7 @@ class Pet {
     this.imagePath = '',
     this.category = 'Dog',
     this.isFavorite = false,
+    this.notes = '',
   });
 
   Pet copyWith({
@@ -31,6 +33,7 @@ class Pet {
     String? imagePath,
     String? category,
     bool? isFavorite,
+    String? notes,
   }) {
     return Pet(
       id: id ?? this.id,
@@ -41,6 +44,7 @@ class Pet {
       imagePath: imagePath ?? this.imagePath,
       category: category ?? this.category,
       isFavorite: isFavorite ?? this.isFavorite,
+      notes: notes ?? this.notes,
     );
   }
 
@@ -75,6 +79,7 @@ class Pet {
       'imagePath': imagePath,
       'category': category,
       'isFavorite': isFavorite,
+      'notes': notes,
     };
   }
 
@@ -88,6 +93,7 @@ class Pet {
       imagePath: map['imagePath'] ?? '',
       category: map['category'] ?? 'Dog',
       isFavorite: map['isFavorite'] ?? false,
+      notes: map['notes'] ?? '',
     );
   }
 
